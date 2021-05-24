@@ -11,8 +11,7 @@ public class Celular implements Precedente<Celular>{
 	}
 
 	@Override
-	public boolean precedeA(Precedente<Celular> precedente) {
-		Celular celular = (Celular) precedente;
+	public boolean precedeA(Celular celular) {
 		return this.number.compareTo(celular.getNumber()) < 0;
 	}
 	

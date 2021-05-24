@@ -11,8 +11,7 @@ public class Pessoa implements Precedente<Pessoa>{
 	}
 
 	@Override
-	public boolean precedeA(Precedente<Pessoa> precedente) {
-		Pessoa pessoa = (Pessoa) precedente;
+	public boolean precedeA(Pessoa pessoa) {
 		return this.nome.compareTo(pessoa.getNome()) < 0;
 	}
 
