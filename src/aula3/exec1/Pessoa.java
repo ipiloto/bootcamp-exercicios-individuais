@@ -1,7 +1,7 @@
 package aula3.exec1;
 
 public class Pessoa implements Precedente<Pessoa>{
-	
+
 	private String nome;
 	private String cpf;
 	
@@ -11,8 +11,9 @@ public class Pessoa implements Precedente<Pessoa>{
 	}
 
 	@Override
-	public boolean precedeA(Pessoa p) {
-		return this.nome.compareTo(p.getNome()) < 0;
+	public boolean precedeA(Precedente<Pessoa> precedente) {
+		Pessoa pessoa = (Pessoa) precedente;
+		return this.nome.compareTo(pessoa.getNome()) < 0;
 	}
 
 	public String getNome() {
@@ -29,6 +30,12 @@ public class Pessoa implements Precedente<Pessoa>{
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return cpf +" - "+ nome;
 	}
 
 }
